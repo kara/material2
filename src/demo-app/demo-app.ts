@@ -8,9 +8,12 @@ import {ProgressCircleDemo} from './progress-circle/progress-circle-demo';
 import {CheckboxDemo} from './checkbox/checkbox-demo';
 import {Dir} from '../core/rtl/dir';
 import {MdButton} from '../components/button/button';
+import {MD_CARD_DIRECTIVES} from '../components/card/card';
+import {MD_SIDENAV_DIRECTIVES} from '../components/sidenav/sidenav';
+import {MdProgressCircle, MdSpinner} from '../components/progress-circle/progress-circle';
+import {MdCheckbox} from '../components/checkbox/checkbox';
 import {PortalDemo} from './portal/portal-demo';
 import {ToolbarDemo} from './toolbar/toolbar-demo';
-
 
 @Component({
   selector: 'home',
@@ -22,8 +25,8 @@ export class Home {}
   selector: 'demo-app',
   providers: [],
   templateUrl: 'demo-app/demo-app.html',
-  styleUrls: ['demo-app/demo-app.css'],
-  directives: [ROUTER_DIRECTIVES, Dir, MdButton],
+  styleUrls: ['demo-app/demo-app.css', '../components/button/button.css'],
+  directives: [ROUTER_DIRECTIVES, Dir, MdButton, MD_CARD_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MdProgressCircle, MdSpinner, MdCheckbox],
   pipes: []
 })
 @RouteConfig([

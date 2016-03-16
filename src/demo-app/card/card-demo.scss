@@ -1,6 +1,6 @@
 .demo-card-container {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: row;
 
   md-card {
     margin: 0 16px 16px 0;
@@ -20,3 +20,19 @@
     flex-direction: column;
   }
 }
+
+
+  button, a {
+    margin: 8px;
+    text-transform: uppercase;
+  }
+
+  section {
+    background-color: #f7f7f7;
+    margin: 8px;
+    width: 350px;
+  }
+
+  md-checkbox {
+    margin: 10px;
+  }

@@ -1,12 +1,57 @@
-<div class="demo-card-container">
-  <md-card>
-    <md-card-title-group>
-        <md-card-title>Card with title</md-card-title>
-        <md-card-subtitle>Subtitle</md-card-subtitle>
-        <img md-card-md-image>
-    </md-card-title-group>
-  </md-card>
+<md-toolbar color="primary">
+  <i class="material-icons demo-toolbar-icon">menu</i>
+  <span>Primary Toolbar</span>
 
+  <span class="demo-fill-remaining"></span>
+
+  <i class="material-icons">code</i>
+</md-toolbar>
+<div class="demo-card-container" style="margin-top:10px">
+<div>
+
+  <section>
+    <button md-button color="primary">primary</button>
+    <button md-button color="accent">accent</button>
+    <button md-button color="warn">warn</button>
+  </section>
+
+  <section>
+    <button md-raised-button color="primary">primary</button>
+    <button md-raised-button color="accent">accent</button>
+    <button md-raised-button color="warn">warn</button>
+  </section>
+
+  <section>
+    <button md-fab color="primary">
+      <i class="material-icons md-24">home</i>
+    </button>
+    <button md-fab color="accent">
+      <i class="material-icons md-24">favorite</i>
+    </button>
+    <button md-fab color="warn">
+      <i class="material-icons md-24">add</i>
+    </button>
+  </section>
+  <div style="display:flex">
+  <md-progress-circle mode="determinate"
+                      value="80"
+                      class="md-primary"></md-progress-circle>
+  <md-progress-circle value="80"
+                      class="md-accent"></md-progress-circle>
+
+      <div style="display:flex; flex-direction: column">
+    <md-checkbox indeterminate="false">
+      Toast
+    </md-checkbox>
+    <md-checkbox indeterminate="false">
+      Eggs
+    </md-checkbox>
+    <md-checkbox indeterminate="false">
+      Cheese
+    </md-checkbox>
+      </div>
+  </div>
+</div>
   <md-card>
     <md-card-subtitle>Subtitle</md-card-subtitle>
     <md-card-title>Card with title</md-card-title>
@@ -28,23 +73,4 @@
     </md-card-content>
   </md-card>
 
-  <md-card>
-    <md-card-header>
-      <img md-card-avatar>
-      <md-card-title>Header title</md-card-title>
-      <md-card-subtitle>Header subtitle</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="https://material.angularjs.org/latest/img/washedout.png">
-    <md-card-content>
-      <p>Here is some content</p>
-    </md-card-content>
-  </md-card>
-
-  <md-card class="demo-card-blue md-card-flat">
-    <md-card-title>Easily customizable</md-card-title>
-    <md-card-actions>
-      <button md-button>First</button>
-      <button md-button>Second</button>
-    </md-card-actions>
-  </md-card>
-</div>
+ </div>
