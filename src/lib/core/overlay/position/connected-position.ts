@@ -4,7 +4,6 @@ export type HorizontalConnectionPos = 'start' | 'center' | 'end';
 /** Vertical dimension of a connection point on the perimeter of the origin or overlay element. */
 export type VerticalConnectionPos = 'top' | 'center' | 'bottom';
 
-
 /** A connection point on the origin element. */
 export interface OriginConnectionPosition {
   originX: HorizontalConnectionPos;

@@ -1,1 +1,14 @@
-I'm a select!
+<div class="md-select-trigger" (click)="toggleIfEnabled($event)" overlay-origin #trigger="overlayOrigin">
+  <span class="md-select-placeholder" [@transformLabel]="labelState"> {{ placeholder }}</span>
+  <span *ngIf="!selected && labelState === 'floating'"></span>
+  <span *ngIf="selected" class="md-select-value">{{ selected.viewValue }}</span>
+  <span class="md-select-arrow" [class.md-select-arrow-selected]="selected && !disabled"></span>
+</div>
+<template #panel connected-overlay [origin]="trigger" [open]="panelOpen" [width]="_getTriggerWidth()"
+          hasBackdrop backdropClass="md-overlay-transparent-backdrop" (backdropClick)="close()">
+  <div class="md-select-panel" [@transformPanel]="'in'">
+    <div class="md-select-content" [@fadeInOptions]="'in'">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</template>

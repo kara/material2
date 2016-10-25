@@ -1,1 +1,23 @@
-<md-select></md-select>
+<div class="demo-select">
+  <section>
+    <p>ngModel value: {{ food }}</p>
+    <md-select placeholder="Food" name="food" [(ngModel)]="food">
+      <md-option *ngFor="let item of items" [value]="item.value">{{item.text}}</md-option>
+    </md-select>
+  </section>
+
+  <section>
+    <form #form="ngForm">
+      <md-select placeholder="State" name="state" ngModel [disabled]="isDisabled" required>
+        <md-option *ngFor="let state of states">{{ state }}</md-option>
+      </md-select>
+    </form>
+    <div>
+      <p>Value: {{ form.value | json }}</p>
+      <p>Dirty: {{ form.dirty }}</p>
+      <p>Form status: {{ form.control?.status }}</p>
+      <button md-raised-button (click)="isDisabled=!isDisabled" color="accent">TOGGLE DISABLED</button>
+    </div>
+  </section>
+</div>
+

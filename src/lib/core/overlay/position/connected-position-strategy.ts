@@ -27,7 +27,6 @@ export class ConnectedPositionStrategy implements PositionStrategy {
   /** The origin element against which the overlay will be positioned. */
   private _origin: HTMLElement;
 
-
   constructor(
       private _connectedTo: ElementRef,
       private _originPos: OriginConnectionPosition,
@@ -68,6 +67,7 @@ export class ConnectedPositionStrategy implements PositionStrategy {
       // If the overlay in the calculated position fits on-screen, put it there and we're done.
       if (this._willOverlayFitWithinViewport(overlayPoint, overlayRect, viewportRect)) {
         this._setElementPosition(element, overlayPoint);
+
         return Promise.resolve(null);
       }
     }
@@ -84,7 +84,6 @@ export class ConnectedPositionStrategy implements PositionStrategy {
     this._preferredPositions.push(new ConnectionPositionPair(originPos, overlayPos));
     return this;
   }
-
 
   /**
    * Gets the horizontal (x) "start" dimension based on whether the overlay is in an RTL context.
@@ -181,7 +180,6 @@ export class ConnectedPositionStrategy implements PositionStrategy {
         overlayPoint.y >= viewportRect.top &&
         overlayPoint.y + overlayRect.height <= viewportRect.bottom;
   }
-
 
   /**
    * Physically positions the overlay element to the given coordinate.

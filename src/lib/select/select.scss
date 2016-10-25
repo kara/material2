@@ -1,0 +1,84 @@
+@import '../core/style/variables';
+@import '../core/style/menu-common';
+@import '../core/style/form-common';
+@import '../core/style/list-common';
+
+$md-select-arrow-size: 5px !default;
+$md-select-panel-max-height: 256px !default;
+
+@import '../core/style/variables';
+
+md-select {
+  display: inline-block;
+  outline: none;
+}
+
+.md-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  cursor: pointer;
+
+  [aria-disabled='true'] & {
+    @include md-control-disabled-underline();
+    border-bottom: transparent;
+    background-position: 0 bottom;
+    cursor: default;
+  }
+}
+
+.md-select-panel {
+  @include md-menu-base();
+  max-width: none;
+  max-height: $md-select-panel-max-height;
+  padding-top: 0;
+  padding-bottom: 0;
+  transform-origin: top;
+}
+
+md-option {
+  @include md-menu-item-base();
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.md-select-placeholder {
+  @include md-truncate-line();
+
+  padding: 0 2px;
+  transform-origin: left top 0;
+  user-select: none;
+
+  [aria-required='true'] &::after {
+    content: '*';
+    margin: 0 2px;
+  }
+}
+
+.md-select-value {
+  user-select: none;
+}
+
+.md-select-arrow {
+  width: 0;
+  height: 0;
+  border-left: $md-select-arrow-size solid transparent;
+  border-right: $md-select-arrow-size solid transparent;
+  border-top: $md-select-arrow-size solid;
+  cursor: pointer;
+  margin: 0 8px;
+
+  [aria-disabled='true'] & {
+    cursor: default;
+  }
+}
+
+.md-select-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

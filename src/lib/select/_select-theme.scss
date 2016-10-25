@@ -1,0 +1,81 @@
+@import '../core/theming/palette';
+@import '../core/theming/theming';
+
+
+@mixin md-select-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+
+  .md-select-content {
+    color: md-color($foreground, 'text');
+    background: md-color($background, 'card');
+  }
+
+  md-option {
+    &[aria-disabled='true'] {
+      color: md-color($foreground, 'disabled');
+    }
+
+    &:hover:not([aria-disabled='true']), &:focus:not([aria-disabled='true']) {
+      background: md-color($background, 'hover');
+    }
+
+    &.md-selected {
+      background: md-color($background, 'hover');
+      color: md-color($primary);
+    }
+  }
+
+  .md-select-trigger {
+    border-bottom: 1px solid md-color($foreground, 'divider');
+
+    *:focus & {
+      border-bottom: 1px solid md-color($primary);
+    }
+
+    .ng-invalid.ng-touched:not([aria-disabled='true']) & {
+      border-bottom: 1px solid md-color($warn);
+    }
+  }
+
+  .md-select-placeholder {
+    color: md-color($foreground, 'disabled');
+
+    *:focus:not([aria-disabled='true']) & {
+      color: md-color($primary);
+    }
+
+    .ng-invalid.ng-touched:not([aria-disabled='true']) & {
+      color: md-color($warn);
+    }
+
+    [aria-required='true']:not([aria-disabled='true']) &::after {
+      color: md-color($warn);
+    }
+  }
+
+  .md-select-value {
+    [aria-disabled='true'] & {
+      color: md-color($foreground, 'disabled');
+    }
+  }
+
+  .md-select-value, .md-select-arrow.md-select-arrow-selected {
+    color: md-color($foreground, 'text');
+  }
+
+  .md-select-arrow {
+    color: md-color($foreground, 'disabled');
+
+    *:focus:not([aria-disabled='true']) & {
+      color: md-color($primary);
+    }
+
+    .ng-invalid.ng-touched:not([aria-disabled='true']) & {
+      color: md-color($warn);
+    }
+  }
+
+}

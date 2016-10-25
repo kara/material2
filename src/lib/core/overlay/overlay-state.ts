@@ -12,10 +12,16 @@ export class OverlayState {
   /** Whether the overlay has a backdrop. */
   hasBackdrop: boolean = false;
 
+  /** Custom class to add to the backdrop **/
   backdropClass: string = 'md-overlay-dark-backdrop';
 
+  /** The width of the overlay panel **/
+  width: number | string;
+
+  /** The height of the overlay panel **/
+  height: number | string;
+
   // TODO(jelbourn): configuration still to add
-  // - overlay size
   // - focus trap
   // - disable pointer events
   // - z-index

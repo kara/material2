@@ -1,18 +1,13 @@
 @import '../core/style/variables';
-
-
-$md-input-floating-placeholder-scale-factor: 0.75 !default;
-
-// Gradient for showing the dashed line when the input is disabled.
-$md-input-underline-disabled-background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 33%, transparent 0%);
+@import '../core/style/form-common';
+@import '../core/style/list-common';
 
 // Applies a floating placeholder above the input itself.
 @mixin md-input-placeholder-floating {
   display: block;
   padding-bottom: 5px;
-  transform: translateY(-100%) scale($md-input-floating-placeholder-scale-factor);
-  width: 100% / $md-input-floating-placeholder-scale-factor;
+  transform: translateY(-100%) scale($md-floating-placeholder-scale-factor);
+  width: 100% / $md-floating-placeholder-scale-factor;
 }
 
 md-input {
@@ -112,9 +107,7 @@ md-input {
   // Put ellipsis text overflow.
   width: 100%;
   display: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow-x: hidden;
+  @include md-truncate-line();
 
   transform: translateY(0);
   transform-origin: bottom left;
@@ -149,11 +142,9 @@ md-input {
   border-top-style: solid;
 
   &.md-disabled {
+    @include md-control-disabled-underline();
     border-top: 0;
-    background-image: $md-input-underline-disabled-background-image;
     background-position: 0;
-    background-size: 4px 1px;
-    background-repeat: repeat-x;
   }
 
   .md-input-ripple {

@@ -1,0 +1,15 @@
+.demo-select {
+
+  display: flex;
+  flex-flow: row wrap;
+
+  section {
+    width: 500px;
+    margin: 24px;
+  }
+
+  md-select {
+    width: 112px;
+    margin: 24px 0;
+  }
+}

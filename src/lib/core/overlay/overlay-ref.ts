@@ -23,6 +23,7 @@ export class OverlayRef implements PortalHost {
     }
 
     let attachResult = this._portalHost.attach(portal);
+    this.updateSize();
     this.updatePosition();
 
     return attachResult;
@@ -57,6 +58,18 @@ export class OverlayRef implements PortalHost {
       this._state.positionStrategy.apply(this._pane);
     }
   }
+
+  /** Updates the size of the overlay based on the overlay config. */
+  updateSize() {
+    if (this._state.width) {
+      this._pane.style.width = `${this._state.width}px`;
+    }
+
+    if (this._state.height) {
+      this._pane.style.height = `${this._state.height}px`;
+    }
+  }
+
 
   /** Attaches a backdrop for this overlay. */
   private _attachBackdrop() {
