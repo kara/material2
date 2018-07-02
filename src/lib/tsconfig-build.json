@@ -13,20 +13,27 @@
       "../../dist/packages/material"
     ],
     "paths": {
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"],
-      "@angular/material/*": ["../../dist/packages/material/*"]
+      "@angular/cdk/*": [
+        "../../dist/packages/cdk/*"
+      ],
+      "@angular/material/*": [
+        "../../dist/packages/material/*"
+      ]
     }
   },
   "files": [
-    "public-api.ts",
+    "index.ts",
     "typings.d.ts"
   ],
   "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
     "flatModuleId": "@angular/material",
     "skipTemplateCodegen": true,
-    "fullTemplateTypeCheck": true
+    "fullTemplateTypeCheck": true,
+    "enableIvy": "ngtsc"
+  },
+  "bazelOptions": {
+    "suppressTsconfigOverrideWarnings": true
   }
 }

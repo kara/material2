@@ -13,19 +13,24 @@
       "../../dist/packages/cdk"
     ],
     "paths": {
-      "@angular/cdk/*": ["../../dist/packages/cdk/*"]
+      "@angular/cdk/*": [
+        "../../dist/packages/cdk/*"
+      ]
     }
   },
   "files": [
-    "public-api.ts",
+    "index.ts",
     "typings.d.ts"
   ],
   "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
     "flatModuleId": "@angular/cdk",
     "skipTemplateCodegen": true,
-    "fullTemplateTypeCheck": true
+    "fullTemplateTypeCheck": true,
+    "enableIvy": "ngtsc"
+  },
+  "bazelOptions": {
+    "suppressTsconfigOverrideWarnings": true
   }
 }
