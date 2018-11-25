@@ -30,7 +30,7 @@
     "flatModuleOutFile": "index.js",
     "flatModuleId": "@angular/material",
     "skipTemplateCodegen": true,
-    "fullTemplateTypeCheck": true,
+    "fullTemplateTypeCheck": false,
     "enableIvy": "ngtsc"
   },
   "bazelOptions": {

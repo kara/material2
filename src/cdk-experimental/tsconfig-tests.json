@@ -19,6 +19,7 @@
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": false,
     "emitDecoratorMetadata": true,
 
     // Unset options inherited from tsconfig-build

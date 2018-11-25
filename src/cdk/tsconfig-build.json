@@ -27,7 +27,7 @@
     "flatModuleOutFile": "index.js",
     "flatModuleId": "@angular/cdk",
     "skipTemplateCodegen": true,
-    "fullTemplateTypeCheck": true,
+    "fullTemplateTypeCheck": false,
     "enableIvy": "ngtsc"
   },
   "bazelOptions": {

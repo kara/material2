@@ -389,6 +389,6 @@ export class ListKeyManager<T extends ListKeyManagerOption> {
 
   /** Returns the items as an array. */
   private _getItemsArray(): T[] {
-    return this._items instanceof QueryList ? this._items.toArray() : this._items;
+    return (this._items as any).toArray ? (this._items as any).toArray() : this._items;
   }
 }

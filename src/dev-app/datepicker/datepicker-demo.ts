@@ -86,7 +86,7 @@ export class CustomHeader<D> implements OnDestroy {
   get periodLabel() {
     return this._dateAdapter
         .format(this._calendar.activeDate, this._dateFormats.display.monthYearLabel)
-        .toLocaleUpperCase();
+        .toLocalUpperCase();
   }
 
   previousClicked(mode: 'month' | 'year') {

@@ -12,7 +12,7 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "emitDecoratorMetadata": true,
-    "fullTemplateTypeCheck": true,
+    "fullTemplateTypeCheck": false,
 
     // Unset options inherited from tsconfig-build
     "annotateForClosureCompiler": false,
