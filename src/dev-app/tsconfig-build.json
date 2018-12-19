@@ -25,6 +25,10 @@
       "../../node_modules/@types/!(node)"
     ],
     "baseUrl": ".",
+    "rootDirs": [
+      ".",
+      "../../dist/packages/demo-app"
+    ],
     "paths": {
       "@angular/material/*": [
         "../../dist/packages/material/*"

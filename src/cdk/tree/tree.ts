@@ -8,24 +8,24 @@
 import {FocusableOption} from '@angular/cdk/a11y';
 import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {
-  AfterContentChecked,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ContentChildren,
-  Directive,
-  ElementRef,
-  Input,
-  IterableChangeRecord,
-  IterableDiffer,
-  IterableDiffers,
-  OnDestroy,
-  OnInit,
-  QueryList,
-  ViewChild,
-  ViewContainerRef,
-  ViewEncapsulation,
-  TrackByFunction
+    AfterContentChecked,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ContentChildren,
+    Directive,
+    ElementRef,
+    Input,
+    IterableChangeRecord,
+    IterableDiffer,
+    IterableDiffers,
+    OnDestroy,
+    OnInit,
+    QueryList,
+    ViewChild,
+    ViewContainerRef,
+    ViewEncapsulation,
+    TrackByFunction, AfterViewChecked
 } from '@angular/core';
 import {BehaviorSubject, Observable, of as observableOf, Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -57,7 +57,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CdkTree<T>
-    implements AfterContentChecked, CollectionViewer, OnDestroy, OnInit {
+    implements AfterContentChecked, AfterViewChecked, CollectionViewer, OnDestroy, OnInit {
   /** Subject that emits when the component has been destroyed. */
   private _onDestroy = new Subject<void>();
 
@@ -145,10 +145,12 @@ export class CdkTree<T>
       throw getTreeMultipleDefaultNodeDefsError();
     }
     this._defaultNodeDef = defaultNodeDefs[0];
+  }
 
-    if (this.dataSource && this._nodeDefs && !this._dataSubscription) {
-      this._observeRenderChanges();
-    }
+  ngAfterViewChecked() {
+      if (this.dataSource && this._nodeDefs && !this._dataSubscription) {
+          this._observeRenderChanges();
+      }
   }
 
 

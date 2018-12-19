@@ -91,9 +91,10 @@ export class MatSnackBarContainer extends BasePortalOutlet implements OnDestroy 
 
   /** Attach a component portal as content to this snack bar container. */
   attachComponentPortal<T>(portal: ComponentPortal<T>): ComponentRef<T> {
-    this._assertNotAttached();
-    this._applySnackBarClasses();
-    return this._portalOutlet.attachComponentPortal(portal);
+      this._changeDetectorRef.detectChanges();
+      this._assertNotAttached();
+      this._applySnackBarClasses();
+      return this._portalOutlet.attachComponentPortal(portal);
   }
 
   /** Attach a template portal as content to this snack bar container. */
