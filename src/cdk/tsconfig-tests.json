@@ -26,7 +26,6 @@
 
     // Unset options inherited from tsconfig-build
     "annotateForClosureCompiler": false,
-    "flatModuleOutFile": null,
     "flatModuleId": null,
     "enableIvy": "ngtsc"
   },
