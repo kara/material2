@@ -1,0 +1,1 @@
+{"version":3,"file":"material-moment-adapter.js","sourceRoot":"","sources":["material-moment-adapter.ts"],"names":[],"mappings":";AAAA;;GAEG;;;;;AAEH,qDAAgD","sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\n\nexport * from './material-moment-adapter/index';\n"]}

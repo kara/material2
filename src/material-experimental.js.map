@@ -1,0 +1,1 @@
+{"version":3,"file":"material-experimental.js","sourceRoot":"","sources":["material-experimental.ts"],"names":[],"mappings":";AAAA;;GAEG;;;;;AAEH,mDAA8C","sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\n\nexport * from './material-experimental/index';\n"]}
